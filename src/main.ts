@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage.vue'
 import ContactPage from './pages/ContactPage.vue'
 import AccessibilityStatementPage from './pages/AccessibilityStatementPage.vue'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.vue'
-import './styles.css'
+import './styles.scss'
 
 const router = createRouter({
   history: createWebHistory(),

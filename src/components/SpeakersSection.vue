@@ -1,28 +1,13 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import { speakers } from '../data/content'
-
-const speakerIndex = ref(0)
-const nextSpeaker = () => speakerIndex.value = (speakerIndex.value + 1) % speakers.length
-const prevSpeaker = () => speakerIndex.value = (speakerIndex.value - 1 + speakers.length) % speakers.length
-</script>
-
 <template>
-  <section class="section team" id="team">
-    <div class="eyebrow">наша команда</div>
-    <div class="team-head">
-      <h2>Спікери</h2>
-      <div class="controls">
-        <button aria-label="Previous speaker" @click="prevSpeaker">←</button>
-        <button aria-label="Next speaker" @click="nextSpeaker">→</button>
-      </div>
-    </div>
-    <div class="speaker-card">
-      <img :src="speakers[speakerIndex].image" :alt="speakers[speakerIndex].name">
-      <div class="speaker-copy">
-        <h3>{{ speakers[speakerIndex].name }}</h3>
-        <p v-for="line in speakers[speakerIndex].text" :key="line">{{ line }}</p>
-      </div>
-    </div>
-  </section>
+  <section id="speakers" class="section speakers-section"><div class="container"><p class="eyebrow">Наші спікери</p><h2 class="section-title">Досвідчені експерти-практики</h2><div class="speaker-carousel"><button class="carousel-arrow carousel-arrow--prev" aria-label="Попередні експерти" @click="prev">‹</button><div class="speaker-grid" :key="current"><SpeakerCard v-for="(speaker, index) in orderedSpeakers" :key="speaker.name" :speaker="speaker" :active="index === 0" /></div><button class="carousel-arrow carousel-arrow--next" aria-label="Наступні експерти" @click="next">›</button></div><div class="carousel-dots speaker-dots"><button v-for="(_, index) in speakers" :key="index" :class="{ active: index === current }" :aria-label="`Експерт ${index + 1}`" @click="current = index"></button></div></div></section>
 </template>
+
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import { speakers } from '../data/content'
+import SpeakerCard from './SpeakerCard.vue'
+const current = ref(0)
+const orderedSpeakers = computed(() => [...speakers.slice(current.value), ...speakers.slice(0, current.value)])
+const next = () => current.value = (current.value + 1) % speakers.length
+const prev = () => current.value = (current.value - 1 + speakers.length) % speakers.length
+</script>

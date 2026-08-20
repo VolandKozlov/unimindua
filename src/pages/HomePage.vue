@@ -1,23 +1,17 @@
+<template>
+  <div class="site-page">
+    <AppHeader /><main><HeroSection /><ProgramsSection /><LearningSection /><SpeakersSection /><ReviewsSection /><ContactSection /></main><AppFooter /><StickyApplicationBar />
+  </div>
+</template>
+
 <script setup lang="ts">
-import SiteHeader from '../components/SiteHeader.vue'
+import AppHeader from '../components/AppHeader.vue'
 import HeroSection from '../components/HeroSection.vue'
 import ProgramsSection from '../components/ProgramsSection.vue'
-import FormatSection from '../components/FormatSection.vue'
+import LearningSection from '../components/LearningSection.vue'
 import SpeakersSection from '../components/SpeakersSection.vue'
 import ReviewsSection from '../components/ReviewsSection.vue'
-import CtaSection from '../components/CtaSection.vue'
-import SiteFooter from '../components/SiteFooter.vue'
+import ContactSection from '../components/ContactSection.vue'
+import AppFooter from '../components/AppFooter.vue'
+import StickyApplicationBar from '../components/StickyApplicationBar.vue'
 </script>
-
-<template>
-  <main>
-    <SiteHeader />
-    <HeroSection />
-    <ProgramsSection />
-    <FormatSection />
-    <SpeakersSection />
-    <ReviewsSection />
-    <CtaSection />
-    <SiteFooter />
-  </main>
-</template>
