@@ -10,11 +10,16 @@
     "fetch-assets": "node scripts/fetch-assets.mjs"
   },
   "dependencies": {
+    "@vee-validate/zod": "^4.15.1",
+    "vee-validate": "^4.15.1",
     "vue": "^3.5.0",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "zod": "^3.25.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
+    "playwright": "^1.62.1",
+    "sass": "^1.89.0",
     "typescript": "^5.8.0",
     "vite": "^7.0.0",
     "vue-tsc": "^3.0.0"

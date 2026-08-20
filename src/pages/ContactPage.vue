@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import SiteHeader from '../components/SiteHeader.vue'
-import SiteFooter from '../components/SiteFooter.vue'
-</script>
-
 <template>
   <div>
     <SiteHeader />
@@ -50,3 +45,8 @@ import SiteFooter from '../components/SiteFooter.vue'
     <SiteFooter />
   </div>
 </template>
+
+<script setup lang="ts">
+import SiteHeader from '../components/SiteHeader.vue'
+import SiteFooter from '../components/SiteFooter.vue'
+</script>

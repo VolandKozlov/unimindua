@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import LegalPageLayout from '../components/LegalPageLayout.vue'
-</script>
-
 <template>
   <LegalPageLayout title="Accessibility Statement">
     <p class="legal-note">The purpose of the following template is to assist you in writing your accessibility statement. Please note that you are responsible for ensuring that your site's statement meets the requirements of the local law in your area or region.</p>
@@ -41,3 +37,7 @@ import LegalPageLayout from '../components/LegalPageLayout.vue'
     </ul>
   </LegalPageLayout>
 </template>
+
+<script setup lang="ts">
+import LegalPageLayout from '../components/LegalPageLayout.vue'
+</script>
