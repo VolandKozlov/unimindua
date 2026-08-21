@@ -105,9 +105,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font); font-weight: 700; }
 
 .speakers-section { background: rgba(255,255,255,.36); }
 .speaker-carousel { margin-top: 44px; position: relative; }
-.speaker-grid { max-width: 1040px; margin: 44px auto 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.speaker-grid { max-width: 1180px; margin: 44px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .speaker-carousel .speaker-grid { margin-top: 0; }
-.speaker-carousel > .carousel-arrow, .carousel-dots.speaker-dots { display: none; }
+.speaker-carousel .carousel-arrow--prev { left: 18px; }
+.speaker-carousel .carousel-arrow--next { right: 18px; }
 .speaker-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--cream); box-shadow: var(--shadow); }
 .speaker-card > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; background: #d4d7d3; }
 .speaker-card > div { padding: 24px 24px 28px; display: flex; flex-direction: column; }
