@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -p tsconfig.app.json --noEmit && vite build",
-    "preview": "vite preview",
-    "fetch-assets": "node scripts/fetch-assets.mjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@vee-validate/zod": "^4.15.1",
