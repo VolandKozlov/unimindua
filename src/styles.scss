@@ -118,7 +118,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--heading-font); font-weight: 700; }
 .speaker-dots { margin-top: 28px; }
 
 .reviews-section { padding-top: 96px; }
-.reviews-carousel { margin-top: 42px; position: relative; }
+.reviews-carousel { margin-top: 42px; padding-inline: 64px; position: relative; }
+.reviews-carousel > .carousel-arrow--prev { left: 8px; }
+.reviews-carousel > .carousel-arrow--next { right: 8px; }
 .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .review-grid, .speaker-grid { animation: carousel-slide-in .32s ease both; }
 .review-card { min-height: 300px; padding: 30px; border: 1px solid var(--line); border-radius: 12px; display: flex; align-items: center; background: rgba(255,255,255,.55); box-shadow: var(--shadow); }
