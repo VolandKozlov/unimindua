@@ -15,8 +15,8 @@
 <script setup lang="ts">
 const emit = defineEmits<{ close: [] }>()
 const links = [
-  ['Про нас', '#about'], ['Програми', '#programs'], ['Навчання', '#learning'],
-  ['Спікери', '#speakers'], ['Відгуки', '#reviews'], ['Контакти', '#contacts'],
+  ['Про нас', '/#about'], ['Програми', '/#programs'], ['Навчання', '/#learning'],
+  ['Спікери', '/#speakers'], ['Відгуки', '/#reviews'], ['Контакти', '/#contacts'],
 ]
 
 defineProps<{ open: boolean }>()

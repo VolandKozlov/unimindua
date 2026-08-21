@@ -3,8 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import HomePage from './pages/HomePage.vue'
 import ContactPage from './pages/ContactPage.vue'
-import AccessibilityStatementPage from './pages/AccessibilityStatementPage.vue'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.vue'
+import OfferAgreementPage from './pages/OfferAgreementPage.vue'
 import './styles.scss'
 
 const router = createRouter({
@@ -12,8 +12,9 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomePage },
     { path: '/contact', name: 'contact', component: ContactPage },
-    { path: '/accessibility-statement', name: 'accessibility', component: AccessibilityStatementPage },
     { path: '/privacy-policy', name: 'privacy', component: PrivacyPolicyPage },
+    { path: '/offer-agreement', name: 'offer', component: OfferAgreementPage },
+    { path: '/accessibility-statement', redirect: '/offer-agreement' },
   ],
   scrollBehavior(to) {
     if (to.hash) return { el: to.hash, behavior: 'smooth' }

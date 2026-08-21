@@ -1,17 +1,25 @@
 <template>
   <div class="legal-page">
-    <SiteHeader />
-    <main class="shell legal-content">
-      <h1>{{ title }}</h1>
-      <slot />
+    <AppHeader />
+    <main class="container legal-content">
+      <header class="legal-hero">
+        <RouterLink class="legal-back" to="/">← На головну</RouterLink>
+        <p class="legal-kicker">Правова інформація</p>
+        <h1>{{ title }}</h1>
+      </header>
+      <article class="legal-document">
+        <div class="legal-document__inner">
+          <slot />
+        </div>
+      </article>
     </main>
-    <SiteFooter />
+    <AppFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-import SiteHeader from './SiteHeader.vue'
-import SiteFooter from './SiteFooter.vue'
+import AppHeader from './AppHeader.vue'
+import AppFooter from './AppFooter.vue'
 
 defineProps<{
   title: string

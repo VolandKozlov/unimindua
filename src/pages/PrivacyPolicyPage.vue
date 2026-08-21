@@ -1,15 +1,55 @@
 <template>
-  <LegalPageLayout title="Privacy Policy">
-    <h2>A legal disclaimer</h2>
-    <p>The explanations and information provided on this page are only general and high-level explanations and information on how to write your own document of a Privacy Policy. You should not rely on this article as legal advice or as recommendations regarding what you should actually do, because we cannot know in advance what are the specific privacy policies you wish to establish between your business and your customers and visitors.</p>
-    <p>We recommend that you seek legal advice to help you understand and to assist you in the creation of your own Privacy Policy.</p>
+  <LegalPageLayout title="Політика конфіденційності">
+    <p>Ця Політика конфіденційності описує, як сайт ______________ (далі — «Ми», «Наш сайт», «Сайт») збирає, використовує та захищає вашу персональну інформацію. Використовуючи цей Сайт, ви погоджуєтеся з умовами цієї Політики конфіденційності.</p>
 
-    <h2>Privacy Policy - the basics</h2>
-    <p>Having said that, a privacy policy is a statement that discloses some or all of the ways a website collects, uses, discloses, processes, and manages the data of its visitors and customers. It usually also includes a statement regarding the website’s commitment to protecting its visitors’ or customers’ privacy, and an explanation about the different mechanisms the website is implementing in order to protect privacy.</p>
-    <p>Different jurisdictions have different legal obligations of what must be included in a Privacy Policy. You are responsible to make sure you are following the relevant legislation to your activities and location.</p>
+    <h2>Збір інформації</h2>
+    <p>Ми можемо збирати наступні види інформації:</p>
+    <ul>
+      <li>Персональні дані: ім’я, номер телефону, електронна пошта, які ви добровільно надаєте при заповненні форм на сайті.</li>
+      <li>Автоматично зібрані дані: IP-адреса, тип браузера, час відвідування, файли cookie та інші технічні дані.</li>
+    </ul>
 
-    <h2>What to include in the Privacy Policy</h2>
-    <p>Generally speaking, a Privacy Policy often addresses these types of issues: the types of information the website is collecting and the manner in which it collects the data; an explanation about why is the website collecting these types of information; what are the website's practices on sharing the information with third parties; ways in which your visitors and customers can exercise their rights according to the relevant privacy legislation; the specific practices regarding minors’ data collection; and much, much more.</p>
+    <h2>Зберігання інформації</h2>
+    <p>Ми можемо зберігати інформацію:</p>
+    <ul>
+      <li>З метою з’ясування аналітики даних, досягнення маркетингових цілей, розсилки інформаційних матеріалів тощо.</li>
+      <li>Не більше 10 років з моменту припинення взаємодії з Користувачем або не довше, ніж того вимагає мета зберігання інформації.</li>
+    </ul>
+
+    <h2>Використання інформації</h2>
+    <p>Ми використовуємо вашу інформацію для:</p>
+    <ul>
+      <li>Надання та покращення наших послуг.</li>
+      <li>Відповіді на ваші запити та комунікації.</li>
+      <li>Аналізу роботи сайту та його покращення.</li>
+      <li>Виконання юридичних зобов’язань.</li>
+    </ul>
+
+    <h2>Захист інформації</h2>
+    <p>Ми застосовуємо відповідні технічні та організаційні заходи для захисту вашої інформації від несанкціонованого доступу, втрати чи зловживання.</p>
+
+    <h2>Розкриття інформації третім особам</h2>
+    <p>Ми не передаємо ваші персональні дані третім особам, за винятком випадків:</p>
+    <ul>
+      <li>Коли це необхідно для надання наших послуг (наприклад, передача даних партнерам або сервісним провайдерам).</li>
+      <li>Відповідно до вимог законодавства.</li>
+      <li>Для захисту наших прав або запобігання шахрайству.</li>
+    </ul>
+
+    <h2>Використання файлів cookie</h2>
+    <p>Наш сайт може використовувати файли cookie для поліпшення роботи сайту та збору аналітичних даних. Ви можете змінити налаштування файлів cookie у своєму браузері.</p>
+
+    <h2>Ваші права</h2>
+    <p>Ви маєте право:</p>
+    <ul>
+      <li>Дізнатися, які персональні дані ми зберігаємо.</li>
+      <li>Вимагати виправлення або видалення ваших даних.</li>
+      <li>Відкликати згоду на обробку даних.</li>
+      <li>Подати скаргу до відповідного контролюючого органу.</li>
+    </ul>
+
+    <h2>Зміни в політиці конфіденційності</h2>
+    <p>Ми можемо періодично оновлювати цю Політику конфіденційності. Усі зміни будуть публікуватися на цій сторінці.</p>
   </LegalPageLayout>
 </template>
 
