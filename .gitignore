@@ -2,5 +2,8 @@ node_modules/
 dist/
 .DS_Store
 *.tsbuildinfo
+.firebase/
+firebase-debug.log
 .env
 .env.*
+!.env.example
