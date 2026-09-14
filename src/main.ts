@@ -6,6 +6,7 @@ import ContactPage from './pages/ContactPage.vue'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.vue'
 import OfferAgreementPage from './pages/OfferAgreementPage.vue'
 import './styles.scss'
+import './apple-design.scss'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -20,7 +21,7 @@ const router = createRouter({
     { path: '/admin/users', name: 'admin-users', component: () => import('./pages/AdminUsersPage.vue'), meta: { requiresAdmin: true } },
   ],
   scrollBehavior(to) {
-    if (to.hash) return { el: to.hash, behavior: 'smooth' }
+    if (to.hash) return { el: to.hash, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }
     return { top: 0 }
   },
 })

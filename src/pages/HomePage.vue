@@ -5,6 +5,8 @@
 </template>
 
 <script setup lang="ts">
+import { useReveal } from '../composables/useReveal'
+useReveal()
 import AppHeader from '../components/AppHeader.vue'
 import HeroSection from '../components/HeroSection.vue'
 import ProgramsSection from '../components/ProgramsSection.vue'
