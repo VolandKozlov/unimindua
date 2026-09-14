@@ -27,21 +27,13 @@ The Wix editor screenshot also shows a generated **Inquiry Services Page**. Its 
 ```bash
 npm install
 cp .env.example .env
-# Fill in the Firebase web-app values
+# Add the public Google Sheet ID
 npm run dev
 ```
 
-The student table is available at `/admin/users`. Firebase Authentication handles the login, and
-the authenticated email is checked against `VITE_FIREBASE_ADMIN_EMAILS`. On the free Firebase
-Spark plan, data is loaded from the Google Visualization endpoint configured by
-`VITE_GOOGLE_SHEET_ID` and `VITE_GOOGLE_SHEET_NAME`, so the source spreadsheet must be readable by
-link.
-
-Deploy the backend and site with the Firebase CLI:
-
-```bash
-firebase deploy --only hosting
-```
+The public registry is available at `/registry`. Data is loaded from the Google Visualization
+endpoint configured by `VITE_GOOGLE_SHEET_ID` and `VITE_GOOGLE_SHEET_NAME`, so the source
+spreadsheet must be published or readable by anyone with the link.
 
 If you extracted an older archive into the same folder, remove old dependencies first:
 

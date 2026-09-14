@@ -4,17 +4,14 @@
       <RouterLink class="admin-users-header__logo" to="/" aria-label="UNIMIND — на головну">
         <img src="/assets/logo/unimind-logo.png" alt="UNIMIND">
       </RouterLink>
-      <div class="admin-users-header__account">
-        <span>{{ adminEmail }}</span>
-        <button type="button" @click="logout">Вийти</button>
-      </div>
+      <RouterLink class="registry-back" to="/">На головну</RouterLink>
     </header>
 
     <section class="admin-users-content" aria-labelledby="users-title">
       <div class="admin-users-title">
         <div>
-          <p>Адмінпанель</p>
-          <h1 id="users-title">База учнів</h1>
+          <p>Відкриті дані</p>
+          <h1 id="users-title">Реєстр</h1>
         </div>
         <button class="refresh-button" type="button" :disabled="loading" @click="loadUsers">
           {{ loading ? 'Оновлення…' : 'Оновити дані' }}
@@ -98,11 +95,8 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
-import { getAdminSession, getAdminUsers, logoutAdmin } from '../services/admin'
+import { getRegistryEntries } from '../services/registry'
 
-const router = useRouter()
-const adminEmail = ref('')
 const columns = ref<string[]>([])
 const rows = ref<string[][]>([])
 const loading = ref(true)
@@ -165,7 +159,7 @@ async function loadUsers() {
   loading.value = true
   error.value = ''
   try {
-    const data = await getAdminUsers()
+    const data = await getRegistryEntries()
     columns.value = data.columns
     rows.value = data.rows
     updated.value = data.updatedAt
@@ -176,16 +170,7 @@ async function loadUsers() {
   }
 }
 
-async function logout() {
-  await logoutAdmin().catch(() => undefined)
-  await router.replace('/admin/login')
-}
-
-onMounted(async () => {
-  const session = await getAdminSession().catch(() => null)
-  adminEmail.value = session?.user.email || ''
-  await loadUsers()
-})
+onMounted(loadUsers)
 </script>
 
 <style scoped lang="scss">
@@ -202,8 +187,7 @@ onMounted(async () => {
   background: var(--navy);
 
   &__logo { width: 150px; }
-  &__account { display: flex; align-items: center; gap: 18px; font-size: 14px; }
-  button { padding: 8px 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 8px; color: #fff; background: transparent; cursor: pointer; }
+  .registry-back { padding: 9px 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 20px; color: #fff; font-size: 13px; }
 }
 
 .admin-users-content { width: min(1440px, calc(100% - 80px)); margin: 0 auto; padding: 64px 0 80px; }
@@ -261,7 +245,6 @@ tbody tr:hover { background: rgba(155,217,141,.13); }
 
 @media (max-width: 760px) {
   .admin-users-header { padding-inline: 18px; }
-  .admin-users-header__account span { display: none; }
   .admin-users-content { width: calc(100% - 32px); padding: 44px 0 60px; }
   .admin-users-title { align-items: stretch; flex-direction: column; }
   .admin-users-title h1 { font-size: 54px; }

@@ -20,6 +20,8 @@ button,a { touch-action: manipulation; }
 .desktop-nav { gap: 26px; font-size: 12px; }
 .desktop-nav a { color: #424245; font-weight: 400; transition: color .2s; }
 .desktop-nav a:hover { color: var(--accent); }
+.registry-link { flex: 0 0 auto; color: var(--accent-link); font-size: 12px; font-weight: 700; }
+.registry-link:hover { color: var(--accent); }
 .header-cta { border: 0; border-radius: 24px; background: var(--accent); color: white; padding: 11px 19px; font-size: 12px; }
 .base-button { border-radius: 99px; font-weight: 500; min-height: 54px; transition: transform .35s var(--ease), background .2s, box-shadow .3s; }
 .base-button--primary { background: var(--accent); color: white; }
@@ -125,7 +127,7 @@ button,a { touch-action: manipulation; }
   .program-card h3 { min-height: 0; }.learning-grid { grid-template-columns: repeat(2, 1fr); }.learning-item p { display: block; }
 }
 @media (max-width: 640px) {
-  .container { width: calc(100% - 40px); }.app-header__inner { height: 68px; }.app-logo { width: 166px; }
+  .container { width: calc(100% - 40px); }.app-header__inner { height: 68px; }.app-logo { width: 166px; }.registry-link { display: none; }
   .hero-section { padding-top: 108px; }.hero-section__inner { display: flex; flex-direction: column; gap: 0; min-height: 0; }
   .hero-section__copy { padding: 20px 0 0; }.hero-section h1 { font-size: clamp(44px, 11.8vw, 65px); }.hero-badge { font-size: 9px; margin-bottom: 25px; }
   .hero-lead { font-size: 15px; max-width: none; margin: 24px 0; }.hero-actions { display: flex; width: 100%; flex-direction: row; gap: 20px; }.hero-actions .base-button { width: auto; padding-inline: 22px; font-size: 13px; }.hero-link { font-size: 13px; }

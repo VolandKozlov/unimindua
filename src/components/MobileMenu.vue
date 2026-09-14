@@ -16,7 +16,7 @@
 const emit = defineEmits<{ close: [] }>()
 const links = [
   ['Про нас', '/#about'], ['Програми', '/#programs'], ['Навчання', '/#learning'],
-  ['Спікери', '/#speakers'], ['Відгуки', '/#reviews'], ['Контакти', '/#contacts'],
+  ['Спікери', '/#speakers'], ['Відгуки', '/#reviews'], ['Контакти', '/#contacts'], ['Реєстр', '/registry'],
 ]
 
 defineProps<{ open: boolean }>()
