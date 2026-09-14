@@ -7,7 +7,7 @@
         <RouterLink to="/#programs">Освітні програми</RouterLink>
         <RouterLink to="/#team">Спікери</RouterLink>
       </div>
-      <RouterLink class="nav-cta" to="/contact">Залишити заявку</RouterLink>
+      <a class="nav-cta" href="https://ig.me/m/unimind.ua" target="_blank" rel="noopener noreferrer">Написати в дірект</a>
     </nav>
   </header>
 </template>

@@ -1,13 +1,63 @@
-export type Program = { title: string; description: string; icon: string }
+export type Program = {
+  slug: string
+  title: string
+  description: string
+  icon: string
+  placeholder: {
+    lead: string
+    about: string[]
+    topics: string[]
+  }
+}
 export type LearningItem = { title: string; description: string; icon: string }
 export type Speaker = { name: string; bio: string[]; image: string }
 export type Review = { text: string }
 
 export const programs: Program[] = [
-  { title: 'Спортивна психологія', description: 'Психологічна підготовка спортсменів та команд до високих результатів.', icon: '/assets/icons/programs/program-sport-psychology.png' },
-  { title: 'Психологія мистецтва', description: 'Дослідження творчості, естетики та впливу мистецтва на психіку людини.', icon: '/assets/icons/programs/program-art-psychology.png' },
-  { title: 'Нейропсихологія', description: 'Діагностика та корекція когнітивних процесів у дітей та дорослих.', icon: '/assets/icons/programs/program-neuropsychology.png' },
-  { title: 'Тілесно-орієнтована терапія', description: 'Робота з емоціями та травматичним досвідом через тіло.', icon: '/assets/icons/programs/program-body-therapy.png' },
+  {
+    slug: 'sportyvna-psykholohiia',
+    title: 'Спортивна психологія',
+    description: 'Психологічна підготовка спортсменів та команд до високих результатів.',
+    icon: '/assets/icons/programs/program-sport-psychology.png',
+    placeholder: {
+      lead: 'Програма для тих, хто хоче краще розуміти психологію спортивних досягнень і посилювати внутрішню стійкість.',
+      about: ['На сторінці з’явиться детальний опис навчальної програми, її формату та очікуваних результатів.', 'Ми також додамо інформацію про спікерів, тривалість навчання та умови участі.'],
+      topics: ['Мотивація і цілі', 'Робота зі стресом', 'Командна взаємодія'],
+    },
+  },
+  {
+    slug: 'psykholohiia-mystetstva',
+    title: 'Психологія мистецтва',
+    description: 'Дослідження творчості, естетики та впливу мистецтва на психіку людини.',
+    icon: '/assets/icons/programs/program-art-psychology.png',
+    placeholder: {
+      lead: 'Простір для дослідження творчості, сприйняття мистецтва та його впливу на внутрішній стан людини.',
+      about: ['Тут буде розміщено повний опис курсу, його теми та практичні завдання для учасників.', 'Незабаром додамо розклад, інформацію про викладачів і відповіді на найчастіші запитання.'],
+      topics: ['Психологія творчості', 'Мистецтво та емоції', 'Практики самопізнання'],
+    },
+  },
+  {
+    slug: 'neiropsykholohiia',
+    title: 'Нейропсихологія',
+    description: 'Діагностика та корекція когнітивних процесів у дітей та дорослих.',
+    icon: '/assets/icons/programs/program-neuropsychology.png',
+    placeholder: {
+      lead: 'Напрям про зв’язок роботи мозку з поведінкою, емоціями та когнітивними процесами у дітей і дорослих.',
+      about: ['У цьому розділі з’явиться програма навчання з описом модулів, методів роботи та навчальних матеріалів.', 'Ми готуємо деталі про формат занять, вимоги до учасників і можливості застосування знань.'],
+      topics: ['Когнітивні процеси', 'Методи діагностики', 'Корекційні стратегії'],
+    },
+  },
+  {
+    slug: 'tilesno-oriientovana-terapiia',
+    title: 'Тілесно-орієнтована терапія',
+    description: 'Робота з емоціями та травматичним досвідом через тіло.',
+    icon: '/assets/icons/programs/program-body-therapy.png',
+    placeholder: {
+      lead: 'Програма про уважний контакт з тілом, розуміння його сигналів і делікатну роботу з емоційним досвідом.',
+      about: ['Згодом тут буде опубліковано повну структуру програми, перелік практик та пояснення формату навчання.', 'Також ми додамо інформацію про тривалість, розклад, спікерів і сертифікат після завершення.'],
+      topics: ['Усвідомлення тіла', 'Робота з емоціями', 'Навички саморегуляції'],
+    },
+  },
 ]
 
 export const learningItems: LearningItem[] = [

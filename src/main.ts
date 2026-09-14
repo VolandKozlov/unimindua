@@ -13,6 +13,7 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomePage },
     { path: '/contact', name: 'contact', component: ContactPage },
+    { path: '/programs/:slug', name: 'program', component: () => import('./pages/ProgramPage.vue') },
     { path: '/privacy-policy', name: 'privacy', component: PrivacyPolicyPage },
     { path: '/offer-agreement', name: 'offer', component: OfferAgreementPage },
     { path: '/accessibility-statement', redirect: '/offer-agreement' },
