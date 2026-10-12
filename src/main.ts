@@ -13,7 +13,11 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'home', component: HomePage },
     { path: '/contact', name: 'contact', component: ContactPage },
-    { path: '/programs/:slug', name: 'program', component: () => import('./pages/ProgramPage.vue') },
+    {
+      path: '/programs/:slug',
+      name: 'program',
+      component: () => import('./pages/ProgramPage.vue'),
+    },
     { path: '/privacy-policy', name: 'privacy', component: PrivacyPolicyPage },
     { path: '/offer-agreement', name: 'offer', component: OfferAgreementPage },
     { path: '/accessibility-statement', redirect: '/offer-agreement' },
@@ -21,7 +25,13 @@ const router = createRouter({
     { path: '/admin/:pathMatch(.*)*', redirect: '/registry' },
   ],
   scrollBehavior(to) {
-    if (to.hash) return { el: to.hash, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }
+    if (to.hash)
+      return {
+        el: to.hash,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'instant'
+          : 'smooth',
+      }
     return { top: 0 }
   },
 })

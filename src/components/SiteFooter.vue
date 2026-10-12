@@ -4,8 +4,12 @@
     <a href="mailto:unimind.ua@gmail.com">unimind.ua@gmail.com</a>
     <div class="socials">
       <a href="https://t.me/unimind_ua" target="_blank" rel="noopener noreferrer">Telegram</a>
-      <a href="https://www.instagram.com/unimind.ua/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.youtube.com/@unimind_ua" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.instagram.com/unimind.ua/" target="_blank" rel="noopener noreferrer"
+        >Instagram</a
+      >
+      <a href="https://www.youtube.com/@unimind_ua" target="_blank" rel="noopener noreferrer"
+        >YouTube</a
+      >
     </div>
     <div class="legal">
       <RouterLink to="/offer-agreement">Договір оферти</RouterLink>

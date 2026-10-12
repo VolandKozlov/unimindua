@@ -19,7 +19,10 @@ export async function getRegistryEntries(): Promise<SheetTable> {
     const callbackName = `__unimindSheet_${Date.now()}_${Math.random().toString(36).slice(2)}`
     const callbacks = window as unknown as Record<string, unknown>
     const script = document.createElement('script')
-    const timeout = window.setTimeout(() => finish(() => reject(new Error('Google Sheets не відповідає.'))), 12_000)
+    const timeout = window.setTimeout(
+      () => finish(() => reject(new Error('Google Sheets не відповідає.'))),
+      12_000,
+    )
 
     function finish(action: () => void) {
       window.clearTimeout(timeout)
@@ -32,8 +35,11 @@ export async function getRegistryEntries(): Promise<SheetTable> {
       if (response.status === 'ok' && response.table) finish(() => resolve(response.table!))
       else finish(() => reject(new Error('Не вдалося прочитати Google-таблицю.')))
     }
-    script.onerror = () => finish(() => reject(new Error('Не вдалося підключитися до Google Sheets.')))
-    const url = new URL(`https://docs.google.com/spreadsheets/d/${encodeURIComponent(sheetId)}/gviz/tq`)
+    script.onerror = () =>
+      finish(() => reject(new Error('Не вдалося підключитися до Google Sheets.')))
+    const url = new URL(
+      `https://docs.google.com/spreadsheets/d/${encodeURIComponent(sheetId)}/gviz/tq`,
+    )
     url.searchParams.set('sheet', sheetName)
     url.searchParams.set('tqx', `out:json;responseHandler:${callbackName}`)
     script.src = url.toString()
@@ -43,12 +49,16 @@ export async function getRegistryEntries(): Promise<SheetTable> {
   let columns = table.cols.map((column) => column.label || '')
   let sourceRows = table.rows
   if (columns.every((column) => !column) && sourceRows.length) {
-    columns = sourceRows[0].c.map((cell, index) => String(cell?.f ?? cell?.v ?? `Колонка ${index + 1}`))
+    columns = sourceRows[0].c.map((cell, index) =>
+      String(cell?.f ?? cell?.v ?? `Колонка ${index + 1}`),
+    )
     sourceRows = sourceRows.slice(1)
   }
-  const rows = sourceRows.map((row) => columns.map((_, index) => {
-    const cell = row.c[index]
-    return String(cell?.f ?? cell?.v ?? '')
-  }))
+  const rows = sourceRows.map((row) =>
+    columns.map((_, index) => {
+      const cell = row.c[index]
+      return String(cell?.f ?? cell?.v ?? '')
+    }),
+  )
   return { columns, rows, updatedAt: new Date().toISOString() }
 }

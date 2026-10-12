@@ -48,4 +48,12 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Formatting
+
+```bash
+npm run format
+npm run format:check
+```
+
 # unimindua

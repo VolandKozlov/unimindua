@@ -1,6 +1,10 @@
 <template>
   <div class="site-page">
-    <AppHeader /><main><HeroSection /><ProgramsSection /><LearningSection /><SpeakersSection /><ReviewsSection /><ContactSection /></main><AppFooter /><StickyApplicationBar />
+    <AppHeader />
+    <main>
+      <HeroSection /><ProgramsSection /><LearningSection /><SpeakersSection /><ReviewsSection /><ContactSection />
+    </main>
+    <AppFooter /><StickyApplicationBar />
   </div>
 </template>
 

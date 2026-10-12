@@ -1,5 +1,49 @@
 <template>
-  <section id="speakers" class="section speakers-section"><div class="container"><p class="eyebrow">Лектори</p><h2 class="section-title">Досвідчені експертки-практики</h2><div class="speaker-carousel"><button v-if="hasOverflow" class="carousel-arrow carousel-arrow--prev" aria-label="Попередні експертки" @click="prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg></button><div class="speaker-grid" :key="current" :style="{ gridTemplateColumns: `repeat(${itemsPerView}, minmax(0, 1fr))` }"><SpeakerCard v-for="(speaker, index) in visibleSpeakers" :key="speaker.name" :speaker="speaker" :active="index === 0" /></div><button v-if="hasOverflow" class="carousel-arrow carousel-arrow--next" aria-label="Наступні експертки" @click="next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></button></div><div v-if="hasOverflow" class="carousel-dots speaker-dots"><button v-for="(_, index) in speakers" :key="index" :class="{ active: index === current }" :aria-label="`Експертка ${index + 1}`" @click="current = index"></button></div></div></section>
+  <section id="speakers" class="section speakers-section">
+    <div class="container">
+      <p class="eyebrow">Лектори</p>
+      <h2 class="section-title">Досвідчені експертки-практики</h2>
+      <div class="speaker-carousel">
+        <button
+          v-if="hasOverflow"
+          class="carousel-arrow carousel-arrow--prev"
+          aria-label="Попередні експертки"
+          @click="prev"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+        </button>
+        <div
+          class="speaker-grid"
+          :key="current"
+          :style="{ gridTemplateColumns: `repeat(${itemsPerView}, minmax(0, 1fr))` }"
+        >
+          <SpeakerCard
+            v-for="(speaker, index) in visibleSpeakers"
+            :key="speaker.name"
+            :speaker="speaker"
+            :active="index === 0"
+          />
+        </div>
+        <button
+          v-if="hasOverflow"
+          class="carousel-arrow carousel-arrow--next"
+          aria-label="Наступні експертки"
+          @click="next"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+        </button>
+      </div>
+      <div v-if="hasOverflow" class="carousel-dots speaker-dots">
+        <button
+          v-for="(_, index) in speakers"
+          :key="index"
+          :class="{ active: index === current }"
+          :aria-label="`Експертка ${index + 1}`"
+          @click="current = index"
+        ></button>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -30,10 +74,12 @@ onBeforeUnmount(() => {
 })
 
 const hasOverflow = computed(() => speakers.length > itemsPerView.value)
-const visibleSpeakers = computed(() => Array.from(
-  { length: Math.min(itemsPerView.value, speakers.length) },
-  (_, index) => speakers[(current.value + index) % speakers.length],
-))
-const next = () => current.value = (current.value + 1) % speakers.length
-const prev = () => current.value = (current.value - 1 + speakers.length) % speakers.length
+const visibleSpeakers = computed(() =>
+  Array.from(
+    { length: Math.min(itemsPerView.value, speakers.length) },
+    (_, index) => speakers[(current.value + index) % speakers.length],
+  ),
+)
+const next = () => (current.value = (current.value + 1) % speakers.length)
+const prev = () => (current.value = (current.value - 1 + speakers.length) % speakers.length)
 </script>
