@@ -33,7 +33,7 @@
 
           <label class="search-field">
             <span>Пошук</span>
-            <input v-model.trim="search" type="search" placeholder="Name або номер" />
+            <input v-model.trim="search" type="search" placeholder="Ім’я або номер" />
           </label>
         </div>
 
@@ -273,7 +273,7 @@ onMounted(loadUsers)
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 20px 24px;
+  padding: 20px;
 }
 .users-toolbar {
   label {
@@ -330,6 +330,9 @@ th {
   background: #dff0dc;
   font-family: var(--heading-font);
 }
+th:first-child {
+  background: #dceefa;
+}
 th button {
   width: 100%;
   display: flex;
@@ -354,8 +357,11 @@ tbody tr:last-child td {
 tbody tr:nth-child(even) {
   background: #fafbf9;
 }
-tbody tr:hover {
-  background: rgba(155, 217, 141, 0.13);
+tbody td:first-child:not(.table-message) {
+  background: #f2f8fd;
+}
+tbody tr:nth-child(even) td:first-child:not(.table-message) {
+  background: #eaf4fc;
 }
 .table-message {
   width: 100%;

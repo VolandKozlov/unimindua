@@ -21,12 +21,10 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-orbit hero-orbit--outer"></div>
-        <div class="hero-orbit hero-orbit--inner"></div>
         <img
           class="hero-art"
-          src="/assets/hero/hero-illustration-transparent.png"
-          alt="Абстрактний силует людини з листям та орбітами"
+          src="/assets/hero/hero-study-illustration-transparent.png"
+          alt="Студентка працює за ноутбуком серед книжок, листя та золотих орбіт"
           fetchpriority="high"
         />
         <div class="hero-caption">
@@ -35,7 +33,6 @@
             <strong>Простір вашого розвитку</strong><span>Знання. Практика. Нові можливості.</span>
           </div>
         </div>
-        <span class="hero-visual__label">UNIMIND · ОСВІТА ЗІ ЗМІСТОМ</span>
       </div>
     </div>
     <div class="hero-bottom container">

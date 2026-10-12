@@ -211,17 +211,6 @@ a {
   object-fit: contain;
   filter: drop-shadow(0 20px 25px #26473e14);
 }
-.hero-orbit {
-  position: absolute;
-  border: 1px solid #cedcd873;
-  border-radius: 50%;
-  inset: 12% 5%;
-  transform: rotate(-25deg);
-}
-.hero-orbit--inner {
-  inset: 20% -1%;
-  transform: rotate(30deg);
-}
 .hero-caption {
   position: absolute;
   bottom: 61px;
@@ -256,14 +245,6 @@ a {
   color: var(--muted);
   font-size: 10px;
   margin-top: 4px;
-}
-.hero-visual__label {
-  position: absolute;
-  bottom: 12px;
-  right: 18px;
-  font-size: 8px;
-  letter-spacing: 0.18em;
-  color: #86868b;
 }
 .hero-bottom {
   display: flex;
@@ -710,10 +691,6 @@ a {
     bottom: 36px;
     left: 0;
     padding: 13px 16px;
-  }
-  .hero-visual__label {
-    bottom: 4px;
-    font-size: 7px;
   }
   .hero-bottom {
     margin-top: 14px;
