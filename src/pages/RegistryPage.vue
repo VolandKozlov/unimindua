@@ -33,7 +33,7 @@
 
           <label class="search-field">
             <span>Пошук</span>
-            <input v-model.trim="search" type="search" placeholder="Ім’я, email або телефон" />
+            <input v-model.trim="search" type="search" placeholder="Name або номер" />
           </label>
         </div>
 

@@ -60,5 +60,14 @@ export async function getRegistryEntries(): Promise<SheetTable> {
       return String(cell?.f ?? cell?.v ?? '')
     }),
   )
-  return { columns, rows, updatedAt: new Date().toISOString() }
+  const nameIndex = columns.findIndex((column) => /^(ім['’]?я|name)$/iu.test(column.trim()))
+  const numberIndex = columns.findIndex((column) => /^(номер|number)$/iu.test(column.trim()))
+  if (nameIndex < 0 || numberIndex < 0)
+    throw new Error('У Google-таблиці не знайдено стовпці з іменем і номером.')
+
+  return {
+    columns: ['Name', 'Номер'],
+    rows: rows.map((row) => [row[nameIndex], row[numberIndex]]),
+    updatedAt: new Date().toISOString(),
+  }
 }
