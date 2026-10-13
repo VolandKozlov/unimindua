@@ -3,7 +3,7 @@ export type Program = {
   title: string
   description: string
   icon: string
-  placeholder: {
+  placeholder?: {
     lead: string
     about: string[]
     topics: string[]
@@ -69,6 +69,30 @@ export const programs: Program[] = [
       ],
       topics: ['Усвідомлення тіла', 'Робота з емоціями', 'Навички саморегуляції'],
     },
+  },
+  {
+    slug: 'psykholohiia-komunikatsii',
+    title: 'Психологія комунікації',
+    description: 'Навички довірчого спілкування, активного слухання та роботи з конфліктами.',
+    icon: '/assets/icons/programs/program-communication-psychology.png',
+  },
+  {
+    slug: 'psykholohiia-tilesnoi-terapii',
+    title: 'Психологія тілесної терапії для реабілітологів та масажистів',
+    description: 'Сенсорне мапування та нейросоматичний підхід у роботі з тілом.',
+    icon: '/assets/icons/programs/program-rehabilitation-body-therapy.png',
+  },
+  {
+    slug: 'zoopsykholohiia',
+    title: 'Зоопсихологія',
+    description: 'Поведінка та потреби собак і котів, гуманне навчання й добробут тварин.',
+    icon: '/assets/icons/programs/program-zoopsychology.png',
+  },
+  {
+    slug: 'psykholohiia-hr',
+    title: 'Психологія HR',
+    description: 'Психологічні інструменти найму, мотивації та розвитку команд.',
+    icon: '/assets/icons/programs/program-hr-psychology.png',
   },
 ]
 
