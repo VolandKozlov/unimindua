@@ -13,9 +13,6 @@
             <p class="program-page__lead">
               {{ detail ? program.description : program.placeholder?.lead }}
             </p>
-            <RouterLink class="base-button base-button--primary" to="/contact"
-              >Дізнатися про старт <span>→</span></RouterLink
-            >
           </div>
           <div class="program-page__visual" aria-hidden="true">
             <img :src="program.icon" alt="" />
