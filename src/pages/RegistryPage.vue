@@ -1,5 +1,5 @@
 <template>
-  <main class="admin-users-page">
+  <main class="admin-users-page" :class="{ 'admin-users-page--reviews': isReviews }">
     <header class="admin-users-header">
       <RouterLink class="admin-users-header__logo" to="/" aria-label="UNIMIND — на головну">
         <img src="/assets/logo/unimind-logo.png" alt="UNIMIND" />
@@ -11,7 +11,7 @@
       <div class="admin-users-title">
         <div>
           <p>Відкриті дані</p>
-          <h1 id="users-title">Реєстр</h1>
+          <h1 id="users-title">{{ isReviews ? 'Відгуки' : 'Реєстр' }}</h1>
         </div>
         <button class="refresh-button" type="button" :disabled="loading" @click="loadUsers">
           {{ loading ? 'Оновлення…' : 'Оновити дані' }}
@@ -19,7 +19,7 @@
       </div>
 
       <div class="users-card">
-        <div class="users-toolbar">
+        <div v-if="!isReviews" class="users-toolbar">
           <label>
             Показати
             <select v-model.number="pageSize">
@@ -47,7 +47,8 @@
             <thead>
               <tr>
                 <th v-for="(column, index) in columns" :key="`${column}-${index}`">
-                  <button type="button" @click="sortBy(index)">
+                  <template v-if="isReviews">{{ column }}</template>
+                  <button v-else type="button" @click="sortBy(index)">
                     {{ column || `Колонка ${index + 1}` }}
                     <span :class="{ active: sortColumn === index }" aria-hidden="true">
                       {{ sortColumn === index ? (sortDirection > 0 ? '▲' : '▼') : '↕' }}
@@ -99,7 +100,12 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import { getRegistryEntries } from '../services/registry'
+import { getRegistryEntries, getReviewEntries } from '../services/registry'
+
+const props = withDefaults(defineProps<{ kind?: 'registry' | 'reviews' }>(), {
+  kind: 'registry',
+})
+const isReviews = computed(() => props.kind === 'reviews')
 
 const columns = ref<string[]>([])
 const rows = ref<string[][]>([])
@@ -176,7 +182,7 @@ async function loadUsers() {
   loading.value = true
   error.value = ''
   try {
-    const data = await getRegistryEntries()
+    const data = await (isReviews.value ? getReviewEntries() : getRegistryEntries())
     columns.value = data.columns
     rows.value = data.rows
     updated.value = data.updatedAt
@@ -188,6 +194,13 @@ async function loadUsers() {
 }
 
 onMounted(loadUsers)
+watch(isReviews, () => {
+  page.value = 1
+  search.value = ''
+  columns.value = []
+  rows.value = []
+  loadUsers()
+})
 </script>
 
 <style scoped lang="scss">
@@ -324,6 +337,13 @@ td {
   border-bottom: 1px solid var(--line);
   text-align: left;
   white-space: nowrap;
+}
+.admin-users-page--reviews {
+  td:first-child:not(.table-message) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+  }
 }
 th {
   color: var(--navy);

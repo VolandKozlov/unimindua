@@ -22,6 +22,12 @@ const router = createRouter({
     { path: '/offer-agreement', name: 'offer', component: OfferAgreementPage },
     { path: '/accessibility-statement', redirect: '/offer-agreement' },
     { path: '/registry', name: 'registry', component: () => import('./pages/RegistryPage.vue') },
+    {
+      path: '/reviews',
+      name: 'reviews',
+      component: () => import('./pages/RegistryPage.vue'),
+      props: { kind: 'reviews' },
+    },
     { path: '/admin/:pathMatch(.*)*', redirect: '/registry' },
   ],
   scrollBehavior(to) {

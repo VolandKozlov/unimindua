@@ -7,8 +7,9 @@
       <nav class="desktop-nav" aria-label="Головна навігація">
         <a href="/#about">Про нас</a><a href="/#programs">Програми</a
         ><a href="/#learning">Навчання</a> <a href="/#speakers">Спікери</a
-        ><a href="/#reviews">Відгуки</a><a href="/#contacts">Контакти</a>
+        ><a href="/#contacts">Контакти</a>
       </nav>
+      <RouterLink class="registry-link" to="/reviews">Відгуки</RouterLink>
       <RouterLink class="registry-link" to="/registry">Реєстр</RouterLink>
       <a
         class="header-cta"

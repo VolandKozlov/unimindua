@@ -2,7 +2,7 @@
   <div class="site-page">
     <AppHeader />
     <main>
-      <HeroSection /><ProgramsSection /><LearningSection /><SpeakersSection /><ReviewsSection /><ContactSection />
+      <HeroSection /><ProgramsSection /><LearningSection /><SpeakersSection /><ContactSection />
     </main>
     <AppFooter /><StickyApplicationBar />
   </div>
@@ -16,7 +16,6 @@ import HeroSection from '../components/HeroSection.vue'
 import ProgramsSection from '../components/ProgramsSection.vue'
 import LearningSection from '../components/LearningSection.vue'
 import SpeakersSection from '../components/SpeakersSection.vue'
-import ReviewsSection from '../components/ReviewsSection.vue'
 import ContactSection from '../components/ContactSection.vue'
 import AppFooter from '../components/AppFooter.vue'
 import StickyApplicationBar from '../components/StickyApplicationBar.vue'

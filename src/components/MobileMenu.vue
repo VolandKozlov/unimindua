@@ -31,7 +31,7 @@ const links = [
   ['Програми', '/#programs'],
   ['Навчання', '/#learning'],
   ['Спікери', '/#speakers'],
-  ['Відгуки', '/#reviews'],
+  ['Відгуки', '/reviews'],
   ['Контакти', '/#contacts'],
   ['Реєстр', '/registry'],
 ]

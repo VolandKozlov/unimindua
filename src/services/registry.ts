@@ -7,6 +7,39 @@ export type SheetTable = {
 export async function getRegistryEntries(): Promise<SheetTable> {
   const sheetId = import.meta.env.VITE_GOOGLE_SHEET_ID
   const sheetName = import.meta.env.VITE_GOOGLE_SHEET_NAME || 'students_data'
+  const { columns, rows } = await getSheetRows(sheetId, sheetName)
+  const nameIndex = columns.findIndex((column) => /^(ім['’ʼ]?я|name)$/iu.test(column.trim()))
+  const numberIndex = columns.findIndex((column) =>
+    /^(номер(?:\s+документа)?|number)$/iu.test(column.trim()),
+  )
+  if (nameIndex < 0 || numberIndex < 0)
+    throw new Error('У Google-таблиці не знайдено стовпці з іменем і номером.')
+
+  return {
+    columns: ['Ім’я', 'Номер'],
+    rows: rows.map((row) => [row[nameIndex], row[numberIndex]]),
+    updatedAt: new Date().toISOString(),
+  }
+}
+
+export async function getReviewEntries(): Promise<SheetTable> {
+  const sheetId =
+    import.meta.env.VITE_GOOGLE_REVIEWS_SHEET_ID || import.meta.env.VITE_GOOGLE_SHEET_ID
+  const sheetName = import.meta.env.VITE_GOOGLE_REVIEWS_SHEET_NAME || 'reviews_data'
+  const { columns, rows } = await getSheetRows(sheetId, sheetName)
+  const reviewIndex = columns.findIndex((column) =>
+    /^(відгук|відугук|отзыв|review)$/iu.test(column.trim()),
+  )
+  if (reviewIndex < 0) throw new Error('У Google-таблиці не знайдено стовпець «Відгук».')
+
+  return {
+    columns: ['Відгук'],
+    rows: rows.map((row) => [row[reviewIndex]]),
+    updatedAt: new Date().toISOString(),
+  }
+}
+
+async function getSheetRows(sheetId: string | undefined, sheetName: string) {
   if (!sheetId) throw new Error('Google-таблицю ще не налаштовано.')
 
   type GoogleTable = {
@@ -60,16 +93,5 @@ export async function getRegistryEntries(): Promise<SheetTable> {
       return String(cell?.f ?? cell?.v ?? '')
     }),
   )
-  const nameIndex = columns.findIndex((column) => /^(ім['’ʼ]?я|name)$/iu.test(column.trim()))
-  const numberIndex = columns.findIndex((column) =>
-    /^(номер(?:\s+документа)?|number)$/iu.test(column.trim()),
-  )
-  if (nameIndex < 0 || numberIndex < 0)
-    throw new Error('У Google-таблиці не знайдено стовпці з іменем і номером.')
-
-  return {
-    columns: ['Ім’я', 'Номер'],
-    rows: rows.map((row) => [row[nameIndex], row[numberIndex]]),
-    updatedAt: new Date().toISOString(),
-  }
+  return { columns, rows }
 }
