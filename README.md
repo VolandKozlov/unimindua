@@ -35,7 +35,7 @@ The public registry is available at `/registry`. Data is loaded from the Google 
 endpoint configured by `VITE_GOOGLE_SHEET_ID` and `VITE_GOOGLE_SHEET_NAME`, so the source
 spreadsheet must be published or readable by anyone with the link.
 
-The `/reviews` page uses the public "Unimind Reviews" spreadsheet configured by
+The `/reviews` page uses the public reviews spreadsheet configured by
 `VITE_GOOGLE_REVIEWS_SHEET_ID` and `VITE_GOOGLE_REVIEWS_SHEET_NAME`. Add approved reviews
 under the `Ім’я` and `Відгук` headers. The page is read-only; edits are made in Google Sheets.
 
