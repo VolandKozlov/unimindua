@@ -354,18 +354,7 @@ a {
   width: 68px;
   height: 68px;
   font-size: 28px;
-}
-.learning-item:nth-child(1) .learning-item__icon {
-  background: #5d8c67;
-}
-.learning-item:nth-child(2) .learning-item__icon {
-  background: #bd6980;
-}
-.learning-item:nth-child(3) .learning-item__icon {
-  background: #5b8fb8;
-}
-.learning-item:nth-child(4) .learning-item__icon {
-  background: #d5a253;
+  background: var(--accent);
 }
 .learning-item h3 {
   font-size: 17px;
