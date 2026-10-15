@@ -1,9 +1,9 @@
 <template>
   <section id="programs" class="section programs-section">
     <div class="container">
-      <p class="eyebrow">Знайдіть свій напрям</p>
-      <h2 class="section-title">Наступний рівень. Ваш.</h2>
-      <p class="section-description">Оберіть знання, які стануть вашою силою.</p>
+      <p class="eyebrow">Програми</p>
+      <h2 class="section-title">Оберіть свій напрям</h2>
+      <p class="section-description">Оберіть тему для підвищення кваліфікації</p>
       <div class="program-grid">
         <ProgramCard v-for="program in programs" :key="program.title" :program="program" />
       </div>

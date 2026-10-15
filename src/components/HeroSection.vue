@@ -5,10 +5,9 @@
         <p class="hero-badge"><span></span> Міжнародна освітня платформа</p>
         <h1>Знання, що<br />змінюють <em>життя.</em></h1>
         <p class="hero-lead">
-          Ваш наступний крок у психології.<br />Навчайтеся у практиків. Зростайте у своєму темпі.<br
+          Ваш наступний крок для виходу на новий рівень.<br />Psychology • Business • Tech<br
             class="desktop-break"
-          />
-          Змінюйте світ навколо себе.
+          />Готуємо фахівців у провідних сферах. Програми для будь-якого рівня підготовки.
         </p>
         <div class="hero-actions">
           <a class="base-button base-button--primary" href="#programs"

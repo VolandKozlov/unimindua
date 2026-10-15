@@ -2,7 +2,7 @@
   <section id="speakers" class="section speakers-section">
     <div class="container">
       <p class="eyebrow">Лектори</p>
-      <h2 class="section-title">Досвідчені експертки-практики</h2>
+      <h2 class="section-title">Наші фахівці</h2>
       <div class="speaker-carousel">
         <button
           v-if="hasOverflow"

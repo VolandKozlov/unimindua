@@ -3,10 +3,10 @@
     <div class="container contact-grid contact-cta">
       <div class="contact-cta__copy">
         <p class="eyebrow">Залишилися питання?</p>
-        <h2>Напишіть нам<br />в Instagram Direct.</h2>
+        <h2>Напишіть нам<br />в Instagram.</h2>
         <p>
-          Наші менеджери швидко відповідять, розкажуть про програми та допоможуть обрати свій
-          напрям.
+          Наші менеджери швидко дадуть відповідь на будь-які питання та допоможуть обрати необхідний
+          напрямок.
         </p>
       </div>
       <div class="contact-cta__actions">
@@ -17,7 +17,7 @@
           rel="noopener noreferrer"
         >
           <img src="/assets/icons/ui/instagram.svg" alt="" />
-          <span>Написати в Direct</span>
+          <span>Написати в Instagram</span>
           <span aria-hidden="true">↗</span>
         </a>
         <div class="contact-cta__socials" aria-label="Інші соціальні мережі">

@@ -9,7 +9,7 @@ export type Program = {
     topics: string[]
   }
 }
-export type LearningItem = { title: string; description: string; icon: string }
+export type LearningItem = { title: string; description: string }
 export type Speaker = { name: string; bio: string[]; image: string }
 export type Review = { text: string }
 
@@ -65,7 +65,7 @@ export const programs: Program[] = [
   {
     slug: 'psykholohiia-komunikatsii',
     title: 'Психологія комунікації',
-    description: 'Навички довірчого спілкування, активного слухання та роботи з конфліктами.',
+    description: 'Навички спілкування, активного слухання та роботи з конфліктами.',
     icon: '/assets/icons/programs/program-communication-psychology.png',
   },
   {
@@ -91,23 +91,20 @@ export const programs: Program[] = [
 export const learningItems: LearningItem[] = [
   {
     title: 'Живі онлайн-лекції',
-    description: 'Інтерактивні заняття з експертами у реальному часі та живий зворотний зв’язок.',
-    icon: '/assets/icons/learning/learning-live-online.png',
+    description: 'Інтерактивні заняття з експертами у реальному часі та живий зворотній зв’язок.',
   },
   {
-    title: 'Записи всіх модулів',
-    description: 'Доступ до записів занять у будь-який час у зручному для вас темпі.',
-    icon: '/assets/icons/learning/learning-recordings.png',
+    title: 'Запис кожного модуля',
+    description: 'Доступ до запису кожного заняття в будь-який час для комфортного навчання.',
   },
   {
-    title: 'Довічний доступ',
+    title: 'Доступ назавжди',
     description: 'Матеріали залишаються з вами назавжди після завершення навчання.',
-    icon: '/assets/icons/learning/learning-lifetime-access.png',
   },
   {
-    title: 'Сертифікат',
-    description: 'Отримайте іменний сертифікат після успішного завершення програми.',
-    icon: '/assets/icons/learning/learning-certificate.png',
+    title: 'Міжнародний сертифікат',
+    description:
+      'Отримайте іменний сертифікат після успішного завершення програми та проходження фінального тестування.',
   },
 ]
 
