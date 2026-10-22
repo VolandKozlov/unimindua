@@ -233,7 +233,11 @@ a {
   border-radius: 13px;
   display: grid;
   place-items: center;
-  font-size: 25px;
+  flex: none;
+}
+.hero-caption__icon svg {
+  width: 23px;
+  height: 23px;
 }
 .hero-caption strong {
   display: block;

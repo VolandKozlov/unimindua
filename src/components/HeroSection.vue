@@ -27,7 +27,21 @@
           fetchpriority="high"
         />
         <div class="hero-caption">
-          <span class="hero-caption__icon">✦</span>
+          <span class="hero-caption__icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 6.5C9.7 4.9 6.8 4.4 3.5 5v13c3.3-.6 6.2-.1 8.5 1.5 2.3-1.6 5.2-2.1 8.5-1.5V5c-3.3-.6-6.2-.1-8.5 1.5Z"
+              />
+              <path d="M12 6.5v13" />
+            </svg>
+          </span>
           <div>
             <strong>Простір вашого розвитку</strong><span>Знання. Практика. Нові можливості.</span>
           </div>
