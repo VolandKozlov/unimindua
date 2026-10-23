@@ -15,6 +15,9 @@
           >
           <a class="hero-link" href="#learning">Як це працює <span aria-hidden="true">›</span></a>
         </div>
+        <div class="hero-note">
+          <span class="hero-note__symbol">◎</span><span>Онлайн. З будь-якої точки світу.</span>
+        </div>
       </div>
       <div class="hero-visual">
         <img

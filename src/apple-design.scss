@@ -185,6 +185,17 @@ a {
 .hero-link:hover span {
   transform: translateX(4px);
 }
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 42px;
+  color: #86868b;
+  font-size: 12px;
+}
+.hero-note__symbol {
+  font-size: 22px;
+}
 .hero-visual {
   position: relative;
   height: 580px;
@@ -662,6 +673,10 @@ a {
   }
   .hero-link {
     font-size: 13px;
+  }
+  .hero-note {
+    margin-top: 27px;
+    font-size: 11px;
   }
   .hero-visual {
     height: 370px;
