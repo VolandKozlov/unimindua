@@ -13,6 +13,7 @@
           <a class="base-button base-button--primary" href="#programs"
             >Обрати програму <span aria-hidden="true">↗</span></a
           >
+          
           <a class="hero-link" href="#learning">Як це працює <span aria-hidden="true">›</span></a>
         </div>
         <div class="hero-note">
